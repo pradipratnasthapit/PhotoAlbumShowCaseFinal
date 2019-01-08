@@ -1,5 +1,4 @@
-# PhotoAlbumShowCaseFinal
-Repository for LT ShowCase Final
+# PhotoAlbumTestProject
 
 Project: PhotoAlbumUnitTestProject
   Used NUnit as Testing Framework
