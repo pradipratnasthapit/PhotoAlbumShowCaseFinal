@@ -1,6 +1,6 @@
 using System;
 
-using PhotoAlbumComponents;
+using Services;
 
 namespace PhotoAlbumProject
 {
@@ -10,13 +10,13 @@ namespace PhotoAlbumProject
         {
             string photoAlbumRequestURI = System.Configuration.ConfigurationManager.AppSettings["photoAlbumRequestBaseURI"];
 
-            PhotoAlbumDisplayComponent photoAlbumDispComp = new PhotoAlbumDisplayComponent(photoAlbumRequestURI);
-            photoAlbumDispComp.DisplayAlbumIdAndTitle();
+            PhotoAlbumDisplayService photoAlbumDispService = new PhotoAlbumDisplayService(photoAlbumRequestURI);
+            photoAlbumDispService.DisplayAlbumIdAndTitle();
             Console.WriteLine("Press Any Key To Continue ...");
             Console.ReadKey();
 
 
-            photoAlbumDispComp.DisplayAlbumIdAndTitle(3);
+            photoAlbumDispService.DisplayAlbumIdAndTitle(3);
             Console.ReadKey();
         }
 

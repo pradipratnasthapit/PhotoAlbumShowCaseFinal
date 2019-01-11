@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 
-using Models;
 using NUnit.Framework;
-
-using PhotoAlbumComponents;
+using Services;
+using Models;
 
 namespace PhotoAlbumUnitTestProject
 {
@@ -11,9 +10,9 @@ namespace PhotoAlbumUnitTestProject
     public class PhotoAlbumUnitTest
     {
         [Test]
-        public void GetPhotoAlbums()
+        public void GetPhotoAlbumsAndCompareWithKnownCount()
         {
-            PhotoAlbumComponent paComp = new PhotoAlbumComponent();
+            PhotoAlbumService paComp = new PhotoAlbumService();
             string photoAlbumRequestURI = GetAlbumRequestURI();
             List<PhotoAlbum> photoAlbums = paComp.GetPhotoAlbum(photoAlbumRequestURI);
             int resultPhotoAlbumCoust = photoAlbums.Count;
@@ -24,14 +23,14 @@ namespace PhotoAlbumUnitTestProject
         [TestCase(3)]
         //[TestCase(150)]
         //[TestCase(100)]
-        public void GetPhotoAlbums(int albumId)
+        public void GetPhotoAlbumsAndCompareWithKnowCount(int albumId)
         {
-            PhotoAlbumComponent paComp = new PhotoAlbumComponent();
+            PhotoAlbumService paComp = new PhotoAlbumService();
             string photoAlbumRequestURI = GetAlbumRequestURI();
             List<PhotoAlbum> photoAlbums = paComp.GetPhotoAlbum(photoAlbumRequestURI, albumId);
-            int resultPhotoAlbumCoust = photoAlbums.Count;
+            int resultPhotoAlbumCount = photoAlbums.Count;
             int expectedPhotoAlbumCount = 50;
-            Assert.AreEqual(expectedPhotoAlbumCount, resultPhotoAlbumCoust);
+            Assert.AreEqual(expectedPhotoAlbumCount, resultPhotoAlbumCount);
 
         }
         public string GetAlbumRequestURI()

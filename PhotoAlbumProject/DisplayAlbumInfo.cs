@@ -1,10 +1,9 @@
-﻿using Models;
-using PhotoAlbumComponents;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using Models;
+using Services;
 
 namespace PhotoAlbumProject
 {
@@ -17,14 +16,14 @@ namespace PhotoAlbumProject
         }
         public void DisplayAlbumIdAndTitle()
         {
-            PhotoAlbumComponent paComp = new PhotoAlbumComponent();
-            List<PhotoAlbum> photoAlbums = paComp.GetPhotoAlbum(photoAlbumRequestURI);
+            PhotoAlbumService paService = new PhotoAlbumService();
+            List<PhotoAlbum> photoAlbums = paService.GetPhotoAlbum(photoAlbumRequestURI);
             DisplayAlbumIdAndTitle(photoAlbums);
         }
         public void DisplayAlbumIdAndTitle(int albumId)
         {
-            PhotoAlbumComponent paComp = new PhotoAlbumComponent();
-            List<PhotoAlbum> photoAlbums = paComp.GetPhotoAlbum(photoAlbumRequestURI, albumId);
+            PhotoAlbumService paService = new PhotoAlbumService();
+            List<PhotoAlbum> photoAlbums = paService.GetPhotoAlbum(photoAlbumRequestURI, albumId);
             DisplayAlbumIdAndTitle(photoAlbums);
         }
         public void DisplayAlbumIdAndTitle(List<PhotoAlbum> photoAlbums)

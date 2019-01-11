@@ -43,11 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\PhotoAlbumDisplayComponent.cs" />
+    <Compile Include="Services\PhotoAlbumDisplayService.cs" />
     <Compile Include="Models\PhotoAlbum.cs" />
-    <Compile Include="Components\PhotoAlbumComponent.cs" />
+    <Compile Include="Services\PhotoAlbumService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebRequestComponent.cs" />
+    <Compile Include="Services\WebRequestService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
