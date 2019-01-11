@@ -10,3 +10,9 @@ User JSON to Deserialize Object returned from WebService
 Project: PhotoAlbumProject
   Main Project which uses different component provided in PhotoAlbumComponent Project to Display required output in Console.
   We have added one Assembly Refrence "System.Configuration" so that we can extract out WebService URI to app.config.
+
+TO Get the Console Output:
+Set PhotoAlbumProject as StartUp Project
+
+TO Run NUnit Test
+Open Test Explorer and Run All
